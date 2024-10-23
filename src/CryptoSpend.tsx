@@ -89,13 +89,23 @@ const ITEMS: Omit<Item, 'quantity'>[] = [
     { id: '11', name: 'Airpods', price: 199, image: '/items/airpods.jpg' },
     { id: '12', name: 'Gaming Console', price: 299, image: '/items/gaming-console.jpg' },
     { id: '13', name: 'Drone', price: 350, image: '/items/drone.jpg' },
+    { id: '50', name: 'Rock Power Stripe', price: 400, image: '/items/ssense/rock-power-stripe.jpeg' },
     { id: '14', name: 'Smartphone', price: 699, image: '/items/smartphone.jpg' },
+    { id: '55', name: 'Versace Skateboard', price: 800, image: '/items/ssense/versace-skateboard.jpeg' },
     { id: '15', name: 'Bike', price: 800, image: '/items/bike.jpg' },
+    { id: '52', name: 'Studio People Speaker', price: 1275, image: '/items/ssense/studio-people-people-speaker.jpeg' },
+    { id: '49', name: 'Pioneer DJM-S7', price: 1500, image: '/items/ssense/pioneer-djm-s7.jpeg' },
     { id: '16', name: 'Kitten', price: 1500, image: '/items/kitten.jpg' },
     { id: '17', name: 'Puppy', price: 1500, image: '/items/puppy.jpg' },
+    { id: '51', name: 'SSENSE Mush Carpet', price: 1550, image: '/items/ssense/ssense-mush-carpet.jpeg' },
+    { id: '48', name: 'Louis Poulsen Light', price: 1760, image: '/items/ssense/louis-poulsen-light.jpeg' },
     { id: '18', name: 'Auto Rickshaw', price: 2300, image: '/items/auto-rickshaw.jpg' },
     { id: '19', name: 'Horse', price: 2500, image: '/items/horse.jpg' },
     { id: '20', name: 'Acre of Farmland', price: 3000, image: '/items/acre-of-farmland.jpg' },
+    { id: '46', name: 'Bang & Olufsen Speaker', price: 3500, image: '/items/ssense/bang-olufsen-speaker.jpeg' },
+    { id: '47', name: 'Herman Miller Chair', price: 3580, image: '/items/ssense/herman-miller-chair.jpeg' },
+    { id: '53', name: 'Prada Leather Blouson', price: 4990, image: '/items/ssense/prada-leather-blouson.jpeg' },
+    { id: '56', name: 'Versace Tic Tac Toe', price: 4925, image: '/items/ssense/versace-tictactoe.jpeg' },
     { id: '21', name: 'Designer Handbag', price: 5500, image: '/items/designer-handbag.jpg' },
     { id: '22', name: 'Hot Tub', price: 6000, image: '/items/hot-tub.jpg' },
     { id: '23', name: 'Luxury Wine', price: 7000, image: '/items/luxury-wine.jpg' },
@@ -108,7 +118,7 @@ const ITEMS: Omit<Item, 'quantity'>[] = [
     { id: '30', name: 'Ferrari', price: 250000, image: '/items/ferrari.jpg' },
     { id: '31', name: 'Single Family Home', price: 300000, image: '/items/single-family-home.jpg' },
     { id: '32', name: 'Gold Bar', price: 700000, image: '/items/gold-bar.jpg' },
-    { id: '33', name: 'McDonalds', price: 1500000, image: '/items/mcdonalds-franchise.jpg' },
+    { id: '33', name: 'McDonalds Franchise', price: 1500000, image: '/items/mcdonalds-franchise.jpg' },
     { id: '34', name: 'Superbowl Ad', price: 5250000, image: '/items/superbowl-ad.jpg' },
     { id: '35', name: 'Yacht', price: 7500000, image: '/items/yacht.jpg' },
     { id: '36', name: 'M1 Abrams', price: 8000000, image: '/items/m1-abrams.jpg' },
@@ -117,11 +127,7 @@ const ITEMS: Omit<Item, 'quantity'>[] = [
     { id: '39', name: 'Mansion', price: 45000000, image: '/items/mansion.jpg' },
     { id: '40', name: 'Make a Movie', price: 100000000, image: '/items/make-a-movie.jpg' },
     { id: '41', name: 'Boeing 747', price: 148000000, image: '/items/boeing-747.jpg' },
-    { id: '42', name: 'Mona Lisa', price: 780000000, image: '/items/mona-lisa.jpg' },
-    { id: '43', name: 'Skyscraper', price: 850000000, image: '/items/skyscraper.jpg' },
-    { id: '44', name: 'Cruise Ship', price: 930000000, image: '/items/cruise-ship.jpg' },
-    { id: '45', name: 'NBA Team', price: 2120000000, image: '/items/nba-team.jpg' },
-  ];
+];
 
 const CryptoSpender = () => {
   const [selectedCrypto, setSelectedCrypto] = useState<Cryptocurrency>(CRYPTOCURRENCIES[0]);
@@ -172,11 +178,11 @@ const CryptoSpender = () => {
           <CardHeader className=''>
             <CardTitle className="flex items-center justify-center gap-2">
               <span className='text-[#0000FF]'>${balance.toLocaleString()}</span>
-              {cryptoAmount && (
+             {/* {cryptoAmount && (
                 <div className="text-sm text-zinc-400">
                   ({parseFloat(cryptoAmount).toFixed(6)} {selectedCrypto.symbol})
                 </div>
-              )}
+              )}*/}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -247,7 +253,7 @@ const CryptoSpender = () => {
 
                 <div>
                 <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-green-600 font-bold">
+                <p className="text-[#0000FF] font-bold">
                   ${item.price.toLocaleString()}
                 </p>
                 <p className="text-sm text-gray-500 mb-4">
@@ -286,7 +292,7 @@ const CryptoSpender = () => {
       </div>
 
       {purchasedItems.length > 0 && (
-        <Card className="fixed top-4 right-4 w-96 shadow-xl">
+        <Card className="fixed bottom-4 right-4 w-96 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Receipt className="w-5 h-5" />
